@@ -1,11 +1,11 @@
 // テキスト「繰り返し」
 function setup() {
-  createCanvas(100,100);
+  createCanvas(200,200);
   fill(0);
   let x = 0;
   while(x < 100){ // 四角を描く座標が描画範囲内であれば続ける
-    rect(x, x, 20, 20);
-    x = x + 20; // 繰り返し1回ごとに場所を動かす
+    rect(x, x, 5, );
+    x = x + 5; // 繰り返し1回ごとに場所を動かす
   }
 }
 
