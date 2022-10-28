@@ -11,7 +11,7 @@ function setup(){
 
 function draw(){
   background(160, 192, 255);
-  fill(242, 36, 22)
+  fill(242, 36, 22);
   count = (count + 1) % cycle;
   let size = 50;
   if(count <= t){
