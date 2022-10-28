@@ -8,7 +8,6 @@ let cycle = 1000;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   balls = [];
-  
 }
 
 function draw(){
@@ -24,13 +23,17 @@ function draw(){
   const c = { x: windowWidth / 2, y: windowHeight / 2, size: random(5, 50) , vx: random(-10, 10), vy: random(-10, 10)};
   balls.unshift(c);
   if(count >= 500){ 
+    ellipse(c.x, c.y, c.size);
+    c.x += c.vx;
+    c.y += c.vy;
+  }
 }
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+    const b = { x: mouseX, y: mouseY, size: random(5, 50) , vx: dx, vy: dy };
     balls.push(b);
   }
 }
