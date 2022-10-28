@@ -3,10 +3,12 @@
 // 練習問題：何も操作しなくてもボールが湧いてくる機能を追加しよう
 
 let balls;
-
+let count = 0;
+let cycle = 1000;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   balls = [];
+  
 }
 
 function draw(){
@@ -17,6 +19,11 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
+  
+  count = (count + 1) % cycle;
+  const c = { x: windowWidth / 2, y: windowHeight / 2, size: random(5, 50) , vx: random(-10, 10), vy: random(-10, 10)};
+  balls.unshift(c);
+  if(count >= 500){ 
 }
 
 function mouseDragged(){
