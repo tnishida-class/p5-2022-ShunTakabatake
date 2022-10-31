@@ -3,11 +3,13 @@
 // 練習問題：何も操作しなくてもボールが湧いてくる機能を追加しよう
 
 let balls;
-let count = 0;
-const cycle = 500;
+let count;
+let cycle;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   balls = [];
+  count = 0;
+  cycle = 500; 
 }
 
 function draw(){
@@ -17,14 +19,15 @@ function draw(){
     ellipse(b.x, b.y, b.size);
     b.x += b.vx;
     b.y += b.vy;
+    if(b.x < 0){balls.shift}
+    if(b.x > width){balls.shift}
+    if(b.y < 0){balls.shift}
+    if(b.y > height){balls.shift}
   }
   count = (count + 1) % cycle;
-  const c = { x: windowWidth / 2, y: windowHeight / 2, size: random(5, 50) , vx: random(-10, 10), vy: random(-10, 10)};
-  balls.unshift(c);
-  if(count >= 400){ 
-    ellipse(c.x, c.y, c.size);
-    c.x += c.vx;
-    c.y += c.vy;
+  if(count >= 250){ 
+    const c = { x: windowWidth / 2, y: windowHeight / 2, size: random(5, 50) , vx: random(-10, 10), vy: random(-10, 10)};
+    balls.unshift(c);
   }
 }
 
