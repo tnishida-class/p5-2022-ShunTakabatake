@@ -20,5 +20,9 @@ function setup(){
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
     // BLANK[1]
+    ellipse(10 + dx * i, scores[i], 8);
+    line(px, py, 10 + dx * i, scores[i]);
+    px = 10 + dx * i;
+    py = scores[i];
   }
 }
