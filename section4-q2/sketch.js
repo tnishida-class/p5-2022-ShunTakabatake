@@ -13,6 +13,13 @@ function setup(){
   // 円グラフを描くには割合が必要なので合計を計算しておく
   let total = 0;
   for(let i = 0; i < scores.length; i++){ total += scores[i]; }
+  
 
   // BLANK[1]
+  let pR;  
+    pR = - HALF_PI; 
+  for(i = 0; i < scores.length; i++){
+    arc(width/2, height/2, width/2, height/2, pR, pR + TWO_PI * scores[i] / total, PIE);
+    pR += TWO_PI * scores[i] / total;
+  }  
 }

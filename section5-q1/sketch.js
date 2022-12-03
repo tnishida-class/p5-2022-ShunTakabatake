@@ -4,15 +4,21 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  const blue = color(0, 0, 255);
+  const red = color(255, 0, 0);
+  balloon(20, 10, blue, red, "I love Hololive EN");
 }
 
-function balloon(t){
+function balloon(ax, ay, bc, fc, t){
   let w = textWidth(t);
   let h = textAscent() + textDescent();
-  let p = 2;
-  fill(0);
-  rect(0, 0, w + p * 2, h + p * 2);
-  fill(255);
-  text(t, p, h + p);
+  let p = h * 0.5;
+  noStroke();
+  fill(bc);
+  rect(ax, ay, ax + w + p * 2, ay + h + p * 2);
+  triangle(ax + w + p * 2 - 30, ay + h + p * 2, ax + w + p * 2, ay + h + p * 2 + h, ax + w + p * 2 - 5, ay + h + p * 2);
+  fill(fc);
+  text(t, ax + p , ay + 2 * p);
 }
+  
+  
