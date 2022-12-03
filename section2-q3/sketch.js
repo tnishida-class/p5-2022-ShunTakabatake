@@ -1,5 +1,8 @@
 // ダーツ
-
+const width = 400;
+const height = 400;
+const cx = width / 2; // 中心は (cx, cy)
+const cy = height / 2;
 function setup() {
   const green = color(0, 255, 0);
   const red = color(255, 0, 0);
@@ -9,14 +12,14 @@ function setup() {
   background(255);
   stroke(255);
   strokeWeight(3);
-
-  const cx = width / 2; // 中心は (cx, cy)
-  const cy = height / 2;
   const maxR = min(width, height); // 大きさは幅と高さのうち小さい方
-
   drawCircle(black, maxR);
   drawArcs(green, red, maxR * 0.8);
   // BLANK[1] (hint: drawArcs x 3, drawCircle x 1)
+  drawArcs(cream, black, maxR * 0.75);
+  drawArcs(green, red, maxR * 0.5);
+  drawArcs(cream, black, maxR * 0.45);
+  drawCircle(green, maxR * 0.1)
   drawCircle(red, maxR * 0.05);
 }
 
