@@ -20,6 +20,7 @@ function draw(){
   textSize(25); 
   text("あなたのカードはこの4枚↓", 10, 80);
   text("・マウスカーソルを数字に合わせ、", 400, 345)
+
   text("　Q,W,A,Sを押して移動", 400, 375)
   text("・Rでカードを元に戻す", 400, 405)
   text("・答えは自力で計算しよう！", 400, 435)
@@ -34,7 +35,7 @@ function draw(){
       if(keyIsDown("W".charCodeAt(0))){ ci.x = 240; ci.y = 300;}
       if(keyIsDown("S".charCodeAt(0))){ ci.x = 240; ci.y = 470;}
     }
-    if(keyIsDown("R".charCodeAt(0))){ ci.x = 100 * i; ci.y = 70;}
+    if(keyIsDown("R".charCodeAt(0))){ ci.x = 100 * i; ci.y = 85;}
   }
   
 }
